@@ -1,0 +1,31 @@
+<?php
+	$this->form->setAttribute('action', $this->url($this->url, $this->params));
+	$this->form->prepare();
+?>
+
+<div class="col-md-6">
+	<?= $this->form()->openTag($form); ?>
+	
+	<div class="form-group">
+		<?= $this->formLabel($form->get('title')); ?>
+		<?= $this->formElement($form->get('title')); ?>
+		<?= $this->formElementErrors($form->get('title')); ?>                  
+	</div>
+		
+	<div class="form-group">
+		<?= $this->formLabel($form->get('content')); ?>
+		<?= $this->formElement($form->get('content')); ?>
+		<?= $this->formElementErrors($form->get('content')); ?>
+	</div>
+
+	<div class="form-group">
+		<?= $this->formLabel($form->get('price')); ?>
+		<?= $this->formElement($form->get('price')); ?>
+		<?= $this->formElementErrors($form->get('price')); ?>                  
+	</div>
+
+	<?= $this->formElement($form->get('submit')); ?>
+
+    <a class="btn btn-success btn-xs" href="/products">Back</a>
+	<?= $this->form()->closeTag(); ?>
+</div>
